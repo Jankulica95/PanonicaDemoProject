@@ -86,7 +86,7 @@ namespace PanonicaV1.Controllers.AppControllers
         }
 
         [Route("api/productSeason")]
-        public IEnumerable<ProductDTO> GetAllInSeason (int id)
+        public IEnumerable<Product> GetAllInSeason (int id)
         {
             return _repository.GetAllInSeason(id);
         }
