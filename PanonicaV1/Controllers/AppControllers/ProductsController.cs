@@ -79,19 +79,19 @@ namespace PanonicaV1.Controllers.AppControllers
             return Ok();
         }
 
-        [Route("api/prices")] //Radi
+        [Route("api/prices")] 
         public IEnumerable<Product> GetAllByPriceDesc()
         {
             return _repository.GetAllByPriceDesc();
         }
 
-        [Route("api/productSeason")]//Ne radi
+        [Route("api/productSeason")]
         public IEnumerable<ProductDTO> GetAllInSeason (int id)
         {
             return _repository.GetAllInSeason(id);
         }
 
-        [Route("api/minimum")]//Ne radi
+        [Route("api/minimum")]
         public IEnumerable<ProductDTO> GetAllLessThen (int min)
         {
             return _repository.GetAllLessThen(min);
