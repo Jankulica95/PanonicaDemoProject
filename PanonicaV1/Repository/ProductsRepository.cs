@@ -52,37 +52,22 @@ namespace PanonicaV1.Repository
         {
             return db.Products.OrderByDescending(x => x.Price);
         }
-        public IEnumerable<ProductDTO> GetAllInSeason(int seasonId) 
+     
+      public IEnumerable<Product> GetAllInSeason(int seasonId) 
         {
 
-           
-            List<ProductDTO> lista = new List<ProductDTO>();
-
-            foreach (var item in GetAll().ToList())
+            var products = GetAll().ToList();
+            List<Product> lista = new List<Product>();
+            foreach (Product p in products)
             {
-                foreach (var season in db.Seasons)
+                if (p.SeasonId == seasonId)
                 {
-                    if (item.SeasonId == seasonId)
-                    {
-                        var n = new ProductDTO()
-                        {
-                            Id = item.Id,
-                            Name = item.Name,
-                            ProductionDate = item.ProductionDate,
-                            Price = item.Price,
-                            Quantity = item.Quantity,
-                            PackagingName = item.Packaging.Name,
-                            SeasonName = item.Season.Name
-                        };
-                        lista.Add(n);
-                    }
+                    lista.Add(p);
                 }
-
             }
 
             return lista.AsEnumerable();
-
-        }       
+     
         public IEnumerable<ProductDTO> GetAllLessThen(int min)
         {
             var list = db.Products
