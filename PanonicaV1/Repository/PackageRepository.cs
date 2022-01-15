@@ -52,16 +52,10 @@ namespace PanonicaV1.Repository
 
 
 
-        //public IQueryable<PackagingDTO> GetTimesUsed()
-        //{
-        //    //List<PackagingDTO> list = new List<PackagingDTO>();
-        //    //IEnumerable<Product> products = db.Products.GetAll();
-                
-            
-        //    throw new NotImplementedException();
-    
-
-        //} //Dovrsiti
+        public IQueryable<PackagingDTO> GetTimesUsed()
+        {
+            throw new NotImplementedException();
+        } //Dovrsiti
 
         protected virtual void Dispose(bool disposing)
         {
